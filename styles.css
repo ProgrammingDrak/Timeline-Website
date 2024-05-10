@@ -14,20 +14,25 @@ body, html {
 }
 
 .timeline-entry {
-    width: 80%; /* Each entry takes up 80% of the timeline container width */
+    width: 100%; /* Full-width entries in the main column */
     perspective: 1000px;
-    margin: 30px 0; /* Adds vertical spacing between cards */
+    margin-bottom: 20px;
 }
 
-.side-by-side { /* New class for side-by-side entries */
+.side-by-side {
     display: flex;
-    justify-content: space-between; /* Spaces out the two entries evenly */
+    justify-content: space-between;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .side-by-side .timeline-entry {
-    width: 48%; /* Adjusts width to less than half to fit two side by side */
-    margin-bottom: 10px; /* Reduced margin for aesthetic spacing */
+    flex: 1; /* Each entry takes equal space, dynamically dividing the row */
+    margin-right: 10px; /* Adds spacing between entries */
+}
+
+.side-by-side .timeline-entry:last-child {
+    margin-right: 0; /* No margin for the last item in the row */
 }
 
 .timeline-icon {
